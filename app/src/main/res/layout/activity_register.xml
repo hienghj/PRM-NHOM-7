@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".RegisterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <!-- Logo -->
+        <TextView
+            android:id="@+id/tvLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/logo_icon"
+            android:textSize="48sp"
+            android:textColor="@color/green_primary"
+            android:layout_marginTop="64dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_title"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/tvLogo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Full name -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilFullName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:hint="@string/full_name"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/green_primary"
+            app:startIconDrawable="@android:drawable/ic_menu_edit"
+            app:startIconTint="@color/text_secondary"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etFullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Email -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/email_label"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/green_primary"
+            app:startIconDrawable="@android:drawable/ic_dialog_email"
+            app:startIconTint="@color/text_secondary"
+            app:layout_constraintTop_toBottomOf="@id/tilFullName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Password -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/password_label"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/green_primary"
+            app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
+            app:startIconTint="@color/text_secondary"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/text_secondary"
+            app:layout_constraintTop_toBottomOf="@id/tilEmail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Password Strength Indicator -->
+        <LinearLayout
+            android:id="@+id/llPasswordStrength"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tilPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Strength Bar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Độ mạnh:"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary" />
+
+                <View
+                    android:id="@+id/strengthBar1"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="2dp"
+                    android:background="@color/gray_light" />
+
+                <View
+                    android:id="@+id/strengthBar2"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="2dp"
+                    android:background="@color/gray_light" />
+
+                <View
+                    android:id="@+id/strengthBar3"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="2dp"
+                    android:background="@color/gray_light" />
+
+                <View
+                    android:id="@+id/strengthBar4"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="2dp"
+                    android:background="@color/gray_light" />
+
+                <View
+                    android:id="@+id/strengthBar5"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_weight="1"
+                    android:background="@color/gray_light" />
+
+                <TextView
+                    android:id="@+id/tvStrengthText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Rất yếu"
+                    android:textSize="12sp"
+                    android:textColor="@color/red_error" />
+            </LinearLayout>
+
+            <!-- Password Requirements -->
+            <TextView
+                android:id="@+id/tvPasswordRequirements"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/password_requirements_subtitle"
+                android:textSize="11sp"
+                android:textColor="@color/text_secondary"
+                android:lineSpacingExtra="2dp" />
+
+            <!-- Requirements List -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvReqLength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/password_requirement_length"
+                    android:textSize="10sp"
+                    android:textColor="@color/red_error"
+                    android:drawableStart="@drawable/ic_error"
+                    android:drawablePadding="4dp"
+                    android:gravity="center_vertical" />
+
+                <TextView
+                    android:id="@+id/tvReqUppercase"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/password_requirement_uppercase"
+                    android:textSize="10sp"
+                    android:textColor="@color/red_error"
+                    android:drawableStart="@drawable/ic_error"
+                    android:drawablePadding="4dp"
+                    android:gravity="center_vertical" />
+
+                <TextView
+                    android:id="@+id/tvReqLowercase"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/password_requirement_lowercase"
+                    android:textSize="10sp"
+                    android:textColor="@color/red_error"
+                    android:drawableStart="@drawable/ic_error"
+                    android:drawablePadding="4dp"
+                    android:gravity="center_vertical" />
+
+                <TextView
+                    android:id="@+id/tvReqDigit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/password_requirement_digit"
+                    android:textSize="10sp"
+                    android:textColor="@color/red_error"
+                    android:drawableStart="@drawable/ic_error"
+                    android:drawablePadding="4dp"
+                    android:gravity="center_vertical" />
+
+                <TextView
+                    android:id="@+id/tvReqSpecial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/password_requirement_special"
+                    android:textSize="10sp"
+                    android:textColor="@color/red_error"
+                    android:drawableStart="@drawable/ic_error"
+                    android:drawablePadding="4dp"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Confirm Password -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilConfirmPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/confirm_password_label"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/green_primary"
+            app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
+            app:startIconTint="@color/text_secondary"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/text_secondary"
+            app:layout_constraintTop_toBottomOf="@id/llPasswordStrength"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Register Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRegister"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/register_submit"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/green_primary"
+            android:textColor="@color/white"
+            app:cornerRadius="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tilConfirmPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Login Link -->
+        <LinearLayout
+            android:id="@+id/llLoginLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/btnRegister"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/already_have_account"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvLoginLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_link"
+                android:textColor="@color/green_primary"
+                android:textStyle="bold"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:indeterminateTint="@color/green_primary"
+            app:layout_constraintTop_toTopOf="@+id/btnRegister"
+            app:layout_constraintBottom_toBottomOf="@+id/btnRegister"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
