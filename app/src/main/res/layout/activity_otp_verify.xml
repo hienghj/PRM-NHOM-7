@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="24dp"
+    android:background="@color/white">
+
+    <Space android:layout_width="0dp" android:layout_height="24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@android:drawable/ic_dialog_email"
+            app:tint="@color/green_primary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xác minh mã OTP của bạn"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:id="@+id/tvEmailMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chúng tôi đã gửi mã OTP gồm 6 chữ số đến\nemail của bạn: %s.\nVui lòng kiểm tra hộp thư đến và cả thư mục spam."
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+    <LinearLayout
+        android:id="@+id/otpContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- 6 boxes -->
+        <EditText
+            android:id="@+id/et1"
+            android:layout_width="40dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:background="@drawable/bg_otp_box" />
+
+        <Space android:layout_width="8dp" android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/et2"
+            android:layout_width="40dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:background="@drawable/bg_otp_box" />
+
+        <Space android:layout_width="8dp" android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/et3"
+            android:layout_width="40dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:background="@drawable/bg_otp_box" />
+
+        <Space android:layout_width="8dp" android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/et4"
+            android:layout_width="40dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:background="@drawable/bg_otp_box" />
+
+        <Space android:layout_width="8dp" android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/et5"
+            android:layout_width="40dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:background="@drawable/bg_otp_box" />
+
+        <Space android:layout_width="8dp" android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/et6"
+            android:layout_width="40dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:background="@drawable/bg_otp_box" />
+    </LinearLayout>
+
+    <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnVerify"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="Xác minh OTP"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/green_primary"
+        app:cornerRadius="12dp" />
+
+    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chưa nhận được mã?"
+        android:textColor="@color/text_secondary"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnResend"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="Gửi lại OTP"
+        android:textStyle="bold"
+        android:textColor="@color/green_primary"
+        android:backgroundTint="@android:color/transparent"
+        app:cornerRadius="12dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/green_primary" />
+
+    <Space android:layout_width="0dp" android:layout_height="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBackToLogin"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="Quay lại page Đăng nhập"
+        android:textStyle="bold"
+        android:textColor="@color/text_secondary"
+        android:backgroundTint="@android:color/transparent"
+        app:cornerRadius="12dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/text_secondary" />
+
+</LinearLayout>
+
+
+
